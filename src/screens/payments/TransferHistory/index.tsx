@@ -37,14 +37,14 @@ const TransferHistory = () => {
   const {height: windowHeight} = useWindowDimensions();
 
   const handleCloseModal = () => {
-    () => refetch();
+    refetch();
     setShowModal(false);
     setTransferId('');
   };
 
   useEffect(() => {
     if (transferId) {
-      () => refetch();
+      refetch();
     }
   }, [transferId]);
 
@@ -115,13 +115,13 @@ const TransferHistory = () => {
                 </Text>
                 <View style={styles.detailsWrapper2}>
                   <Text style={styles.text}>
-                    Name: {`${transfers?.bank_code}`}
+                    Name: {`${transfers?.bank_code || ''}`}
                   </Text>
                   <Text style={styles.text}>
-                    Account: {`${transfers.account_number}`}
+                    Account: {`${transfers.account_number || ''}`}
                   </Text>
                   <Text style={styles.text}>
-                    Amount: {`₦${transfers.amount}`}
+                    Amount: {`₦${transfers.amount || ''}`}
                   </Text>
                   <Text style={styles.text}>
                     Status:{' '}
@@ -135,7 +135,7 @@ const TransferHistory = () => {
                     </Text>
                   </Text>
                   <Text style={styles.text}>
-                    Transaction Fee: {`₦${transfers.fee}`}
+                    Transaction Fee: {`₦${transfers.fee || ''}`}
                   </Text>
                 </View>
               </View>
