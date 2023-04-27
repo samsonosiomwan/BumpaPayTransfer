@@ -79,4 +79,8 @@ export const styles = StyleSheet.create({
     borderRadius: 16,
     borderColor: COLORS.primary,
   },
+  text: {
+    color: COLORS.black01,
+    fontWeight: '600',
+  },
 });

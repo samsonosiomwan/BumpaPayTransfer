@@ -56,8 +56,8 @@ const TransferHistory = () => {
         setTransferId(item.id);
       }}>
       <View>
-        <Text>Name: {item?.bank_code}</Text>
-        <Text>
+        <Text style={styles.text}>Name: {item?.bank_code}</Text>
+        <Text style={styles.text}>
           Amt: {''}
           <Text style={styles.amount}>{`₦${formatAmount(item?.amount)}`}</Text>
         </Text>
@@ -114,10 +114,16 @@ const TransferHistory = () => {
                   Transaction Details
                 </Text>
                 <View style={styles.detailsWrapper2}>
-                  <Text>Name: {`${transfers?.bank_code}`}</Text>
-                  <Text>Account: {`${transfers.account_number}`}</Text>
-                  <Text>Amount: {`₦${transfers.amount}`}</Text>
-                  <Text>
+                  <Text style={styles.text}>
+                    Name: {`${transfers?.bank_code}`}
+                  </Text>
+                  <Text style={styles.text}>
+                    Account: {`${transfers.account_number}`}
+                  </Text>
+                  <Text style={styles.text}>
+                    Amount: {`₦${transfers.amount}`}
+                  </Text>
+                  <Text style={styles.text}>
                     Status:{' '}
                     <Text
                       style={
@@ -128,7 +134,9 @@ const TransferHistory = () => {
                       {transfers.status}
                     </Text>
                   </Text>
-                  <Text>Transaction Fee: {`₦${transfers.fee}`}</Text>
+                  <Text style={styles.text}>
+                    Transaction Fee: {`₦${transfers.fee}`}
+                  </Text>
                 </View>
               </View>
               <Button label="Continue" onClick={handleCloseModal} />
