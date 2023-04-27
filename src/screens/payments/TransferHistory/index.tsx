@@ -37,14 +37,14 @@ const TransferHistory = () => {
   const {height: windowHeight} = useWindowDimensions();
 
   const handleCloseModal = () => {
-    refetch();
+    () => refetch();
     setShowModal(false);
     setTransferId('');
   };
 
   useEffect(() => {
     if (transferId) {
-      refetch();
+      () => refetch();
     }
   }, [transferId]);
 
